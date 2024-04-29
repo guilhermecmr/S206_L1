@@ -1,0 +1,1 @@
+Projeto padrão que utiliza o cypress e mochawesome.
