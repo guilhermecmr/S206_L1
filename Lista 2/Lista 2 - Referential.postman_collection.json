@@ -1,0 +1,380 @@
+{
+	"info": {
+		"_postman_id": "b66dd10c-bc01-4810-a7a4-79ef709004a5",
+		"name": "Lista 2 - Referential",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "34744457",
+		"_collection_link": "https://team66-8993.postman.co/workspace/Team-Workspace~65c2f06c-d57f-44ac-87f4-4fdaf40fd9e8/collection/34744457-b66dd10c-bc01-4810-a7a4-79ef709004a5?action=share&source=collection_link&creator=34744457"
+	},
+	"item": [
+		{
+			"name": "GET",
+			"item": [
+				{
+					"name": "Localiza pais com sucesso",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include('\"value\":\"Brazil\"');\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-RapidAPI-Key",
+								"value": "72b5d2eca0msh65ad252e57d3f62p1b80f3jsnb5be3b01af37"
+							},
+							{
+								"key": "X-RapidAPI-Host",
+								"value": "referential.p.rapidapi.com"
+							}
+						],
+						"url": {
+							"raw": "https://referential.p.rapidapi.com/v1/country?fields=currency,currency_num_code,currency_code,continent_code,currency,iso_a3,dial_code&name=Brazil&limit=250",
+							"protocol": "https",
+							"host": [
+								"referential",
+								"p",
+								"rapidapi",
+								"com"
+							],
+							"path": [
+								"v1",
+								"country"
+							],
+							"query": [
+								{
+									"key": "fields",
+									"value": "currency,currency_num_code,currency_code,continent_code,currency,iso_a3,dial_code"
+								},
+								{
+									"key": "name",
+									"value": "Brazil"
+								},
+								{
+									"key": "limit",
+									"value": "250"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Localiza pais com falha",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-RapidAPI-Key",
+								"value": "72b5d2eca0msh65ad252e57d3f62p1b80f3jsnb5be3b01af37"
+							},
+							{
+								"key": "X-RapidAPI-Host",
+								"value": "referential.p.rapidapi.com"
+							}
+						],
+						"url": {
+							"raw": "https://referential.p.rapidapi.com/v1/country?fields=currency,currency_num_code,currency_code,continent_code,currency,iso_a3,dial_code&name=Itajuba&limit=250",
+							"protocol": "https",
+							"host": [
+								"referential",
+								"p",
+								"rapidapi",
+								"com"
+							],
+							"path": [
+								"v1",
+								"country"
+							],
+							"query": [
+								{
+									"key": "fields",
+									"value": "currency,currency_num_code,currency_code,continent_code,currency,iso_a3,dial_code"
+								},
+								{
+									"key": "name",
+									"value": "Itajuba"
+								},
+								{
+									"key": "limit",
+									"value": "250"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Encontra cidade com sucesso",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include('\"value\":\"Itajubá\"');\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-RapidAPI-Key",
+								"value": "72b5d2eca0msh65ad252e57d3f62p1b80f3jsnb5be3b01af37"
+							},
+							{
+								"key": "X-RapidAPI-Host",
+								"value": "referential.p.rapidapi.com"
+							}
+						],
+						"url": {
+							"raw": "https://referential.p.rapidapi.com/v1/city?fields=iso_a2,state_code,state_hasc,timezone,timezone_offset&iso_a2=br&prefix=itajub&limit=250",
+							"protocol": "https",
+							"host": [
+								"referential",
+								"p",
+								"rapidapi",
+								"com"
+							],
+							"path": [
+								"v1",
+								"city"
+							],
+							"query": [
+								{
+									"key": "fields",
+									"value": "iso_a2,state_code,state_hasc,timezone,timezone_offset"
+								},
+								{
+									"key": "iso_a2",
+									"value": "br"
+								},
+								{
+									"key": "prefix",
+									"value": "itajub"
+								},
+								{
+									"key": "limit",
+									"value": "250"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Encontra cidade com falha",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 404\", function () {\r",
+									"    pm.response.to.have.status(404);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-RapidAPI-Key",
+								"value": "72b5d2eca0msh65ad252e57d3f62p1b80f3jsnb5be3b01af37"
+							},
+							{
+								"key": "X-RapidAPI-Host",
+								"value": "referential.p.rapidapi.com"
+							}
+						],
+						"url": {
+							"raw": "https://referential.p.rapidapi.com/v1/city?fields=iso_a2,state_code,state_hasc,timezone,timezone_offset&iso_a2=br&prefix=London&limit=250",
+							"protocol": "https",
+							"host": [
+								"referential",
+								"p",
+								"rapidapi",
+								"com"
+							],
+							"path": [
+								"v1",
+								"city"
+							],
+							"query": [
+								{
+									"key": "fields",
+									"value": "iso_a2,state_code,state_hasc,timezone,timezone_offset"
+								},
+								{
+									"key": "iso_a2",
+									"value": "br"
+								},
+								{
+									"key": "prefix",
+									"value": "London"
+								},
+								{
+									"key": "limit",
+									"value": "250"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Localiza continente com sucesso",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include('\"value\":\"South America\"');\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-RapidAPI-Key",
+								"value": "72b5d2eca0msh65ad252e57d3f62p1b80f3jsnb5be3b01af37"
+							},
+							{
+								"key": "X-RapidAPI-Host",
+								"value": "referential.p.rapidapi.com"
+							}
+						],
+						"url": {
+							"raw": "https://referential.p.rapidapi.com/v1/continent?name=south america",
+							"protocol": "https",
+							"host": [
+								"referential",
+								"p",
+								"rapidapi",
+								"com"
+							],
+							"path": [
+								"v1",
+								"continent"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "south america"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Encontra lingua com sucesso",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.test(\"Body matches string\", function () {\r",
+									"    pm.expect(pm.response.text()).to.include('\"value\":\"Portuguese\"');\r",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "X-RapidAPI-Key",
+								"value": "72b5d2eca0msh65ad252e57d3f62p1b80f3jsnb5be3b01af37"
+							},
+							{
+								"key": "X-RapidAPI-Host",
+								"value": "referential.p.rapidapi.com"
+							}
+						],
+						"url": {
+							"raw": "https://referential.p.rapidapi.com/v1/lang?fields=iso_a2,lang_3,flag&lang_3=por",
+							"protocol": "https",
+							"host": [
+								"referential",
+								"p",
+								"rapidapi",
+								"com"
+							],
+							"path": [
+								"v1",
+								"lang"
+							],
+							"query": [
+								{
+									"key": "fields",
+									"value": "iso_a2,lang_3,flag"
+								},
+								{
+									"key": "lang_3",
+									"value": "por"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
